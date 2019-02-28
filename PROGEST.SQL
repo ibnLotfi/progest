@@ -1,12 +1,12 @@
 -- -----------------------------------------------------------------------------
---             Génération d'une base de données pour
+--             GÃ©nÃ©ration d'une base de donnÃ©es pour
 --                           PostgreSQL
---                        (28/2/2019 13:52:24)
+--                        (28/2/2019 14:17:43)
 -- -----------------------------------------------------------------------------
 --      Nom de la base : progest
 --      Projet : Accueil Win'Design V17_00
 --      Auteur : Jean-philippe Stephane
---      Date de dernière modification : 28/2/2019 13:51:08
+--      Date de derniÃ¨re modification : 28/2/2019 14:17:11
 -- -----------------------------------------------------------------------------
 
 drop database progest;
@@ -30,7 +30,7 @@ CREATE TABLE PERSONNE
     CP char(5) NOT NULL  ,
     TEL text NOT NULL  ,
     PORTABLE text NULL  ,
-    EMAIL text NULL unique  ,
+    EMAIL text NULL unique ,
     MDP text NULL  ,
     ETREPROF bool NULL  
 ,   CONSTRAINT PK_PERSONNE PRIMARY KEY (IDPERSONNE)
@@ -45,7 +45,7 @@ CREATE TABLE EQUIPE
     IDPROJET int4 NOT NULL  ,
     IDEQUIPE serial NOT NULL  ,
     IDPERSONNE int4 NULL  ,
-    DATECREATIONEQUIPE date NOT NULL  ,
+    DATE_CREATION_EQUIPE date NOT NULL  ,
     COMMENTAIRE text NULL  
 ,   CONSTRAINT PK_EQUIPE PRIMARY KEY (IDPROJET, IDEQUIPE)
    ) ;
@@ -80,7 +80,7 @@ CREATE TABLE PROMOTION
 CREATE TABLE PROJET
    (
     IDPROJET serial NOT NULL  ,
-    IDPERSONNE int4 NULL  ,
+    ID_PROJET int4 NULL  ,
     IDPROMOTION int4 NOT NULL  ,
     TITRE text NULL  ,
     DATECREATIONPROJ date NOT NULL  ,
@@ -94,7 +94,7 @@ CREATE TABLE PROJET
 -- -----------------------------------------------------------------------------
 
 CREATE  INDEX I_FK_PROJET_PERSONNE
-     ON PROJET (IDPERSONNE)
+     ON PROJET (ID_PROJET)
     ;
 
 CREATE  INDEX I_FK_PROJET_PROMOTION
@@ -102,50 +102,50 @@ CREATE  INDEX I_FK_PROJET_PROMOTION
     ;
 
 -- -----------------------------------------------------------------------------
---       TABLE : INSCRIRE
+--       TABLE : MEMBRE_PROMOTION
 -- -----------------------------------------------------------------------------
 
-CREATE TABLE INSCRIRE
+CREATE TABLE MEMBRE_PROMOTION
    (
     IDPROMOTION int4 NOT NULL  ,
     IDPERSONNE int4 NOT NULL  
-,   CONSTRAINT PK_INSCRIRE PRIMARY KEY (IDPROMOTION, IDPERSONNE)
+,   CONSTRAINT PK_MEMBRE_PROMOTION PRIMARY KEY (IDPROMOTION, IDPERSONNE)
    ) ;
 
 -- -----------------------------------------------------------------------------
---       INDEX DE LA TABLE INSCRIRE
+--       INDEX DE LA TABLE MEMBRE_PROMOTION
 -- -----------------------------------------------------------------------------
 
-CREATE  INDEX I_FK_INSCRIRE_PROMOTION
-     ON INSCRIRE (IDPROMOTION)
+CREATE  INDEX I_FK_MEMBRE_PROMOTION_PROMOTIO
+     ON MEMBRE_PROMOTION (IDPROMOTION)
     ;
 
-CREATE  INDEX I_FK_INSCRIRE_PERSONNE
-     ON INSCRIRE (IDPERSONNE)
+CREATE  INDEX I_FK_MEMBRE_PROMOTION_PERSONNE
+     ON MEMBRE_PROMOTION (IDPERSONNE)
     ;
 
 -- -----------------------------------------------------------------------------
---       TABLE : MEMBRE
+--       TABLE : MEMBRE_EQUIPE
 -- -----------------------------------------------------------------------------
 
-CREATE TABLE MEMBRE
+CREATE TABLE MEMBRE_EQUIPE
    (
     IDPERSONNE int4 NOT NULL  ,
     IDPROJET int4 NOT NULL  ,
     IDEQUIPE int4 NOT NULL  
-,   CONSTRAINT PK_MEMBRE PRIMARY KEY (IDPERSONNE, IDPROJET, IDEQUIPE)
+,   CONSTRAINT PK_MEMBRE_EQUIPE PRIMARY KEY (IDPERSONNE, IDPROJET, IDEQUIPE)
    ) ;
 
 -- -----------------------------------------------------------------------------
---       INDEX DE LA TABLE MEMBRE
+--       INDEX DE LA TABLE MEMBRE_EQUIPE
 -- -----------------------------------------------------------------------------
 
-CREATE  INDEX I_FK_MEMBRE_PERSONNE
-     ON MEMBRE (IDPERSONNE)
+CREATE  INDEX I_FK_MEMBRE_EQUIPE_PERSONNE
+     ON MEMBRE_EQUIPE (IDPERSONNE)
     ;
 
-CREATE  INDEX I_FK_MEMBRE_EQUIPE
-     ON MEMBRE (IDPROJET, IDEQUIPE)
+CREATE  INDEX I_FK_MEMBRE_EQUIPE_EQUIPE
+     ON MEMBRE_EQUIPE (IDPROJET, IDEQUIPE)
     ;
 
 
@@ -166,7 +166,7 @@ ALTER TABLE EQUIPE ADD
 
 ALTER TABLE PROJET ADD 
      CONSTRAINT FK_PROJET_PERSONNE
-          FOREIGN KEY (IDPERSONNE)
+          FOREIGN KEY (ID_PROJET)
                REFERENCES PERSONNE (IDPERSONNE);
 
 ALTER TABLE PROJET ADD 
@@ -174,23 +174,23 @@ ALTER TABLE PROJET ADD
           FOREIGN KEY (IDPROMOTION)
                REFERENCES PROMOTION (IDPROMOTION);
 
-ALTER TABLE INSCRIRE ADD 
-     CONSTRAINT FK_INSCRIRE_PROMOTION
+ALTER TABLE MEMBRE_PROMOTION ADD 
+     CONSTRAINT FK_MEMBRE_PROMOTION_PROMOTION
           FOREIGN KEY (IDPROMOTION)
                REFERENCES PROMOTION (IDPROMOTION);
 
-ALTER TABLE INSCRIRE ADD 
-     CONSTRAINT FK_INSCRIRE_PERSONNE
+ALTER TABLE MEMBRE_PROMOTION ADD 
+     CONSTRAINT FK_MEMBRE_PROMOTION_PERSONNE
           FOREIGN KEY (IDPERSONNE)
                REFERENCES PERSONNE (IDPERSONNE);
 
-ALTER TABLE MEMBRE ADD 
-     CONSTRAINT FK_MEMBRE_PERSONNE
+ALTER TABLE MEMBRE_EQUIPE ADD 
+     CONSTRAINT FK_MEMBRE_EQUIPE_PERSONNE
           FOREIGN KEY (IDPERSONNE)
                REFERENCES PERSONNE (IDPERSONNE);
 
-ALTER TABLE MEMBRE ADD 
-     CONSTRAINT FK_MEMBRE_EQUIPE
+ALTER TABLE MEMBRE_EQUIPE ADD 
+     CONSTRAINT FK_MEMBRE_EQUIPE_EQUIPE
           FOREIGN KEY (IDPROJET, IDEQUIPE)
                REFERENCES EQUIPE (IDPROJET, IDEQUIPE);
 
