@@ -6,7 +6,7 @@ require_once("../view/index_view.php");
 if (isset($_SESSION["user"])) {
     // $nom = $_SESSION["user"] ;
     //echo "Bienvenue ".$_SESSION["user"]["prenom"];
-    if ($_SESSION["user"]["ETREPROF"] == 0) {
+    if ($_SESSION["user"]["etreprof"] == 0) {
         require_once("../pages/etudiant_controller.php");
     } 
     else {
