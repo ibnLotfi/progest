@@ -1,5 +1,5 @@
 <?php
-echo '<br> <br> ceci est le controller etudiant';
+//echo '<br> <br> ceci est le controller etudiant';
 
 
 // A cree
