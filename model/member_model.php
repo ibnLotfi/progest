@@ -9,13 +9,13 @@ class Member {
     * @param int $member_id id of the member to be retrieved
     * @return associative_array table row
     */
-   public static function get($member_id) {
+   public static function get($idpersonne) {
       $db = DB::getConnection();
       $sql = "SELECT *
-              FROM member
-              WHERE member_id = :member_id";
+              FROM personne
+              WHERE Idpersonne = :idpersonne";
       $stmt = $db->prepare($sql);
-      $stmt->bindValue(":member_id", $member_id);
+      $stmt->bindValue(":idpersonne", $idpersonne);
       $ok = $stmt->execute();
       return $stmt->fetch(PDO::FETCH_ASSOC);
    }
