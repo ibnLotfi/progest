@@ -14,7 +14,7 @@
         
         
         <!-- affichage d'es informations sur l'étudiant  -->
-        <p>Bienvenue <?php echo $_SESSION['user']['nom'] . " " . $_SESSION['user']['prenom']; ?></p>
+        <p>Bienvenue <?php echo "".$_SESSION['user']['nom'] . " " . $_SESSION['user']['prenom']; ?></p>
         <div class ="info">
             <p> Nom : <?php echo $_SESSION['user']['nom']; ?> Prenom: <?php echo $_SESSION['user']['prenom']; ?> </p><br> 
             <p> Adresse: <?php echo $_SESSION['user']['adresse'] . ' ' . $_SESSION['user']['ville'] . ' ' . $_SESSION['user']['cp']; ?> </p><br>
@@ -36,10 +36,10 @@
                     
                     ?>
                 <tr>
-                <td><?php echo $unProjet['titre']; ?></td>
-                <td><?php echo $unProjet['dateCreationProjet']; ?></td>
-                <td><?php echo $unProjet['dateLimite']; ?></td>
-                <td><?php echo $unProjet['sujet']; ?></td>
+                <td><?php echo "".$unProjet['titre']; ?></td>
+                <td><?php echo "".$unProjet['dateCreationProjet']; ?></td>
+                <td><?php echo "".$unProjet['dateLimite']; ?></td>
+                <td><?php echo ''.$unProjet['sujet']; ?></td>
                 
                 
                 </tr>
