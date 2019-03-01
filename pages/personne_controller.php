@@ -2,7 +2,7 @@
 echo '<br> <br> ceci est le controller etudiant';
 
 // A cree 
-//$promotion = Promotion::getPromotion($_SESSION["user"]["id"]);
+$promotion = Promotion::getPromotion($_SESSION["user"]["id"]);
 
 include "../view/etudiant_view.php";
 /* 
