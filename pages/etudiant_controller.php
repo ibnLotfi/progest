@@ -1,10 +1,9 @@
 <?php
 echo '<br> <br> ceci est le controller etudiant';
 
-// A cree 
-$promotion = Promotion::get($_SESSION["user"]["id"]);
+
 // A cree
-$lesProjets=Projet::get();
+$lesProjets=Projet::get($_SESSION["user"]["id"]);
 include "../view/etudiant_view.php";
 /* 
  * To change this license header, choose License Headers in Project Properties.
