@@ -14,9 +14,9 @@
 class DB {
 
    // Prefedined MySql integrity exceptions
-   const DUPLICATE_ENTRY = 1062;
-   const ROW_IS_REFERENCED = 1451;
-   const REFERENCED_ROW_NOT_FOUND = 1452;
+   //const DUPLICATE_ENTRY = 1062;
+   //const ROW_IS_REFERENCED = 1451;
+   //const REFERENCED_ROW_NOT_FOUND = 1452;
    // Auction defined exceptions, raised by triggers
 //   const BID_BEFORE_ENTRY_DATE = 3000;
 
@@ -24,9 +24,9 @@ class DB {
    public static function getConnection() {
       // DB configuration
       $db = "progest";
-      $dsn = "mysql:dbname=$db;host=localhost;charset=utf8";
-      $user = "user_progest";
-      $password = "pwd_progest"; 
+      $dsn = "pgsql:host=localhost;port=5432;dbname=$db";
+      $user = "postgres";
+      $password = "azerty"; 
       // Get a DB connection with PDO library
       $bdd = new PDO($dsn, $user, $password);
       // Set communication in utf-8

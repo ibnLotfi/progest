@@ -25,8 +25,8 @@ class Member {
       // We should use an encoded password, like PASSWORD(password)
       // in the WHERE clause
       $sql = "SELECT *
-            FROM member
-            WHERE email = :email AND password = :password";
+            FROM personne
+            WHERE email = :email AND mdp = :password";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":email", $login);
       $stmt->bindValue(":password", $password);

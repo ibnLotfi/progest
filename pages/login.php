@@ -36,7 +36,8 @@ if ($action == "disconnect") {
                 require_once("../view/index_view.php");
             }
         } catch (PDOException $exc) {
-            $errors["login_form"] = "Problème avec la base de données";
+//            $errors["login_form"] = "Problème avec la base de données";
+            $errors["login_form"] = $exc->getMessage();
             require_once("../view/index_view.php");
         }
     }
