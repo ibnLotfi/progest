@@ -22,7 +22,7 @@ if ($action == "disconnect") {
         $errors["login_form"] = "fields must be filled";
         require_once("../view/index_view.php");
     } else {
-        require_once "../model/member_model.php";
+        require_once "../model/personne_model.php";
         try {
             $user = Member::getByLoginPassword($login, $password);
             if ($user != null) {
