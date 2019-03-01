@@ -10,7 +10,7 @@
         require_once("header.php");
         ?>
         <!-- affichage d'un message perosnnalisé  -->
-        <h1>Espace membre etudiant de la promotion <?php echo $promotion;?> </h1>
+        <h1>Espace membre etudiant  </h1>
         
         
         <!-- affichage d'es informations sur l'étudiant  -->
