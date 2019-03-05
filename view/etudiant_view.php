@@ -16,10 +16,11 @@
         <!-- affichage d'es informations sur l'étudiant  -->
         <p>Bienvenue <?php echo "".$_SESSION['user']['nom'] . " " . $_SESSION['user']['prenom']; ?></p>
         <div class ="info">
-            <p> Nom : <?php echo $_SESSION['user']['nom']; ?> Prenom: <?php echo $_SESSION['user']['prenom']; ?> </p><br> 
+<!--            <p> Nom : <?php echo $_SESSION['user']['nom']; ?> Prenom: <?php echo $_SESSION['user']['prenom']; ?> </p><br> -->
             <p> Adresse: <?php echo $_SESSION['user']['adresse'] . ' ' . $_SESSION['user']['ville'] . ' ' . $_SESSION['user']['cp']; ?> </p><br>
-            <p> tel : <?php echo $_SESSION['user']['tel'] . '' . $_SESSION['user']['portable']; ?></p>
-
+            <p> téléphone fixe : <?php echo $_SESSION['user']['tel']; ?></p>
+            <p> téléphone portable : <?php echo $_SESSION['user']['portable']; ?></p>
+            <br>
         </div>
         
         <!-- affichage des projets s'il y en a  -->
