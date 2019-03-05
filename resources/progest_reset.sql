@@ -49,7 +49,7 @@ BEGIN
 	
 	
 	
-	INSERT INTO public.projet (id_projet, titre, date_Creation_Projet, dateLimite, sujet, id_promotion) 
+	INSERT INTO public.projet (id_projet, titre, date_Creation_Projet, date_Limite, sujet, id_promotion) 
 	VALUES 
 	(1, 'PROJET 1', v_datetime, v_datetime+interval '5 months','php',1),
 	(2, 'PROJET 2', v_datetime-interval '3 months', v_datetime+interval '3 months','java',1),
