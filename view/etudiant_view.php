@@ -38,7 +38,7 @@
                     ?>
                 <tr>
                 <td><?php echo "".$unProjet['titre']; ?></td>
-                <td><?php echo "".$unProjet['dateCreationProjet']; ?></td>
+                <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
                 <td><?php echo "".$unProjet['dateLimite']; ?></td>
                 <td><?php echo ''.$unProjet['sujet']; ?></td>
                 
