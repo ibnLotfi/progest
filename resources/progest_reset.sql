@@ -24,21 +24,21 @@ BEGIN
 	--START TRANSACTION;
 	INSERT INTO public.personne (id_personne, nom, prenom, adresse, ville, cp, tel, portable, email, mdp, etre_prof) 
 	VALUES 
-	(1, 'Dupont', 'Julien', ' 2 rue Paul Vaillant Couturier', 'Cachan', '94230', '01874512', '06874512', 'jdupont@gmail.com', 'false', NULL),
-	(2, 'Fortin', 'Marc', ' 5 rue des Pommiers', 'Vitry', '94400', '01563212', '06454512', 'mfortin@gmail.com', 'false', NULL),
-	(3, 'Lerin', 'Julie', ' 21 rue des Fleurs', 'Vitry', '94400', '012178210', '06457513', 'jlerin@yahoo.fr', 'false', NULL),
-	(4, 'Gerat', 'Pierre', ' 45 avenue  Pasteur ', 'Alfortvile', '94140', '012478218', '06357517', 'pgerat@yahoo.fr', 'false', NULL),
-	(5, 'Detap', 'Gerard', ' 30 avenue Cesar ', 'Alfortville', '94140', '014478218', '06357519', 'gdetap@yahoo.fr', 'false', NULL),
-	(6, 'Moulin', 'Kevin', ' 25 rue des fées ', 'Orly', '94310', '013478278', '06352319', 'kmoulin@yahoo.fr', 'false', NULL),
-	(7, 'Suza', 'Marion', ' 10 rue Albert Einstein ', 'Paris', '75003', '013278778', '064352819', 'msuza@yahoo.fr', 'false', NULL),
-	(8, 'Vrit', 'Didier', ' 56 rue du pain perdu ', 'Paris', '75003', '013778778', '0643572819', 'dvrit@gmail.com', 'false', NULL),
-	(9, 'Famat', 'Vivian', ' 26 rue des perdraux ', 'draveil', '91210', '013478768', '0643572518', 'vfamat@gmail.com', 'false', NULL),
-	(10, 'Dortp', 'Jules', ' 30 avenue Henri Barbusse ', 'Draveil', '91210', '013478758', '0643772518', 'jdorpt@gmail.com', 'false', NULL),
-	(11, 'Darc', 'Bobi', ' 10 rue du president Wilson', 'Draveil', '91210', '013468758', '0643773518', 'bdarc@gmail.com', 'false', NULL),
-	(12, 'Durand', 'Bernard', ' 10 rue des canards', 'Paris', '7500 ', '013468768', '0643772518', 'bdurand@gmail.com', 'true', NULL),
-	(13, 'Satin', 'Paul', ' 10 rue des piverts', 'Paris', '7500 ', '013368768', '0643782518', 'psatin@gmail.com', 'true', NULL),
-	(14, 'Vurap', 'Jean', ' 24 rue des moineaux', 'Paris', '75006', '013468764', '0613762518', 'jvurap@yahoo.fr', 'true', NULL),
-	(15, 'bmk', 'issam', ' 30 rue des chevaux', 'Paris', '75008', '0125478956', '0713762518', 'bissam@yahoo.fr', 'false', NULL);
+	(1, 'Dupont', 'Julien', ' 2 rue Paul Vaillant Couturier', 'Cachan', '94230', '01874512', '06874512', 'jdupont@gmail.com', 'azerty',false),
+	(2, 'Fortin', 'Marc', ' 5 rue des Pommiers', 'Vitry', '94400', '01563212', '06454512', 'mfortin@gmail.com', 'azerty',false),
+	(3, 'Lerin', 'Julie', ' 21 rue des Fleurs', 'Vitry', '94400', '012178210', '06457513', 'jlerin@yahoo.fr', 'azerty',false),
+	(4, 'Gerat', 'Pierre', ' 45 avenue  Pasteur ', 'Alfortvile', '94140', '012478218', '06357517', 'pgerat@yahoo.fr', 'azerty',false),
+	(5, 'Detap', 'Gerard', ' 30 avenue Cesar ', 'Alfortville', '94140', '014478218', '06357519', 'gdetap@yahoo.fr', 'azerty',false),
+	(6, 'Moulin', 'Kevin', ' 25 rue des fées ', 'Orly', '94310', '013478278', '06352319', 'kmoulin@yahoo.fr', 'azerty',false),
+	(7, 'Suza', 'Marion', ' 10 rue Albert Einstein ', 'Paris', '75003', '013278778', '064352819', 'msuza@yahoo.fr', 'azerty',false),
+	(8, 'Vrit', 'Didier', ' 56 rue du pain perdu ', 'Paris', '75003', '013778778', '0643572819', 'dvrit@gmail.com', 'azerty',false),
+	(9, 'Famat', 'Vivian', ' 26 rue des perdraux ', 'draveil', '91210', '013478768', '0643572518', 'vfamat@gmail.com', 'azerty',false),
+	(10, 'Dortp', 'Jules', ' 30 avenue Henri Barbusse ', 'Draveil', '91210', '013478758', '0643772518', 'jdorpt@gmail.com', 'azerty',false),
+	(11, 'Darc', 'Bobi', ' 10 rue du president Wilson', 'Draveil', '91210', '013468758', '0643773518', 'bdarc@gmail.com', 'azerty',false),
+	(12, 'Durand', 'Bernard', ' 10 rue des canards', 'Paris', '7500 ', '013468768', '0643772518', 'bdurand@gmail.com', 'azerty', true),
+	(13, 'Satin', 'Paul', ' 10 rue des piverts', 'Paris', '7500 ', '013368768', '0643782518', 'psatin@gmail.com', 'azerty', true),
+	(14, 'Vurap', 'Jean', ' 24 rue des moineaux', 'Paris', '75006', '013468764', '0613762518', 'jvurap@yahoo.fr', 'azerty', true),
+	(15, 'bmk', 'issam', ' 30 rue des chevaux', 'Paris', '75008', '0125478956', '0713762518', 'bissam@yahoo.fr', 'azerty', true);
 
 	
 	INSERT INTO public.promotion (id_promotion,annee) 

@@ -5,4 +5,6 @@ echo "vous etes sur la page controller professeur";
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//include "../view/professeur_view.php";
+$lesProjets= Member::getProjet($_SESSION["user"]["id_personne"]);
+//var_dump($lesProjets);
+include "../view/professeur_view.php";
