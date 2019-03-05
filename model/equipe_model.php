@@ -30,6 +30,17 @@ class Equipe {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+    public static function setEquipe($idprojet,$idproprietaire,$date_Creation_Equipe,$commentaire) {
+      $db = DB::getConnection();
+      $sql = "insert into equipe (id_projet,id_proprietaire,date_Creation_Equipe,commentaire) 
+          values (:idprojet,:idproprietaire,:commenataire";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idprojet", $idprojet);
+      $stmt->bindValue(":idproprietaire", $idproprietaire);
+      $stmt->bindValue(":commentaire", $commentaire);
+      $ok = $stmt->execute();
+      return $ok;
+   }
    
 }
 
