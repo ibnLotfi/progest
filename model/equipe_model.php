@@ -20,7 +20,16 @@ class Equipe {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
-
+    public static function getEquipeProjet($idprojet) {
+      $db = DB::getConnection();
+      $sql = "SELECT *
+              FROM equipe
+              WHERE id_projet = :idprojet";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idprojet", $idprojet);
+      $ok = $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   }
    
 }
 
