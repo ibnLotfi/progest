@@ -59,7 +59,7 @@ CREATE  INDEX I_FK_EQUIPE_PROJET
     ;
 
 CREATE  INDEX I_FK_EQUIPE_PERSONNE
-     ON EQUIPE (ID_PERSONNE)
+     ON EQUIPE (ID_PROPRIETAIRE)
     ;
 
 -- -----------------------------------------------------------------------------
@@ -89,12 +89,14 @@ CREATE TABLE PROJET
 ,   CONSTRAINT PK_PROJET PRIMARY KEY (ID_PROJET)
    ) ;
 
+
+
 -- -----------------------------------------------------------------------------
 --       INDEX DE LA TABLE PROJET
 -- -----------------------------------------------------------------------------
 
 CREATE  INDEX I_FK_PROJET_PERSONNE
-     ON PROJET (ID_PROJET)
+     ON PROJET (ID_PROPRIETAIRE)
     ;
 
 CREATE  INDEX I_FK_PROJET_PROMOTION
