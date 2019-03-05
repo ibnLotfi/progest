@@ -22,7 +22,7 @@ BEGIN
 	-- Enable again foreign key constraints
 	--SET FOREIGN_KEY_CHECKS=1;
 	--START TRANSACTION;
-	INSERT INTO public.personne (id_personne, nom, prenom, adresse, ville, cp, tel, portable, email, mdp, etreprof) 
+	INSERT INTO public.personne (id_personne, nom, prenom, adresse, ville, cp, tel, portable, email, mdp, etre_prof) 
 	VALUES 
 	(1, 'Dupont', 'Julien', ' 2 rue Paul Vaillant Couturier', 'Cachan', '94230', '01874512', '06874512', 'jdupont@gmail.com', 'false', NULL),
 	(2, 'Fortin', 'Marc', ' 5 rue des Pommiers', 'Vitry', '94400', '01563212', '06454512', 'mfortin@gmail.com', 'false', NULL),
