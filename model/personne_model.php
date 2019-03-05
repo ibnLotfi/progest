@@ -33,6 +33,17 @@ class Member {
       $ok = $stmt->execute();
       return $stmt->fetch(PDO::FETCH_ASSOC);
    }
+    public static function getProjet($idpersonne) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+            FROM projet where id_promotion = (select id_promotion from membre_promotion
+            WHERE id_personne = :idpersonne )";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idpersonne", $idpersonne);
+      $ok = $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   }
 
 }
 

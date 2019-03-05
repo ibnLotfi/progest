@@ -22,7 +22,7 @@ BEGIN
 	-- Enable again foreign key constraints
 	--SET FOREIGN_KEY_CHECKS=1;
 	--START TRANSACTION;
-	INSERT INTO public.personne (id_personne, nom, prenom, adresse, ville, cp, tel, portable, email, mdp, etreprof) 
+	INSERT INTO public.personne (id_personne, nom, prenom, adresse, ville, cp, tel, portable, email, mdp, etre_prof) 
 	VALUES 
 	(1, 'Dupont', 'Julien', ' 2 rue Paul Vaillant Couturier', 'Cachan', '94230', '01874512', '06874512', 'jdupont@gmail.com', 'false', NULL),
 	(2, 'Fortin', 'Marc', ' 5 rue des Pommiers', 'Vitry', '94400', '01563212', '06454512', 'mfortin@gmail.com', 'false', NULL),
@@ -49,7 +49,7 @@ BEGIN
 	
 	
 	
-	INSERT INTO public.projet (id_projet, titre, date_Creation_Projet, dateLimite, sujet, id_promotion) 
+	INSERT INTO public.projet (id_projet, titre, date_Creation_Projet, date_Limite, sujet, id_promotion) 
 	VALUES 
 	(1, 'PROJET 1', v_datetime, v_datetime+interval '5 months','php',1),
 	(2, 'PROJET 2', v_datetime-interval '3 months', v_datetime+interval '3 months','java',1),
