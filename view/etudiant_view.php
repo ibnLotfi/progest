@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="static/auction.css"/>
         <title>Projet collaboratif</title>
     </head>
-    <body>
+    
         <?php
         // Header shared by all pages
         require_once("header.php");
@@ -33,22 +33,22 @@
             ?>
             <table>
             <?php 
-                foreach ($lesProjets as $unProjet)
+                foreach ($lesProjets as $unProjet){
                     
                     ?>
                 <tr>
                 <td><?php echo "".$unProjet['titre']; ?></td>
                 <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
-                <td><?php echo "".$unProjet['dateLimite']; ?></td>
+                <td><?php echo "".$unProjet['date_limite']; ?></td>
                 <td><?php echo ''.$unProjet['sujet']; ?></td>
-                
-                
-                </tr>
+                 </tr>
 
 
                 <?php
             }
+               }
             ?>
             </table>
         </div>
 
+ 
