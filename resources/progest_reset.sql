@@ -65,13 +65,13 @@ BEGIN
 	
 	
 	--equipe 1 (id_equipe=1) du projet 1
-	INSERT INTO public.equipe (id_equipe,id_projet,date_Creation_Equipe,commentaire,id_proprietaire) VALUES (1,1,v_datetime,'équipes alpha Projet 1',1);	
+	INSERT INTO public.equipe (id_equipe,id_projet,date_Creation_Equipe,commentaire,id_proprietaire) VALUES (1,1,v_datetime,'équipes alpha Projet 1',13);	
 	--equipe 2 (id_equipe=2) du projet 1
-	INSERT INTO public.equipe (id_equipe,id_projet,date_Creation_Equipe,commentaire,id_proprietaire) VALUES (2,1,v_datetime,'équipes beta Projet 1',4);
+	INSERT INTO public.equipe (id_equipe,id_projet,date_Creation_Equipe,commentaire,id_proprietaire) VALUES (2,1,v_datetime,'équipes beta Projet 1',13);
 	
 	
 	--equipe 1 (id_equipe=3) du projet 2
-	INSERT INTO public.equipe (id_equipe,id_projet,date_Creation_Equipe,commentaire,id_proprietaire) VALUES (3,2,v_datetime-interval '2 months','equipe partiellement attribué',7);
+	INSERT INTO public.equipe (id_equipe,id_projet,date_Creation_Equipe,commentaire,id_proprietaire) VALUES (3,2,v_datetime-interval '2 months','equipe partiellement attribué',14);
 	
 	
 	--equipe 1 (id_equipe=3) du projet 4
