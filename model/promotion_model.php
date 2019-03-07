@@ -12,15 +12,24 @@ class Promotion {
      */
     public static function getPromotion($idpersonne) {
         $db = DB::getConnection();
-        $sql = "SELECT *
-              FROM membre_promotion
-              WHERE id_personne = :idpersonne ";
+        $sql = "SELECT annee
+              FROM promotion
+              WHERE id_promotion = (select id_promotion FROM membre_promotion WHERE id_personne = :idpersonne) ";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(":idpersonne", $idpersonne);
         $ok = $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    public static function getProjetPromotion($idpersonne) {
+        $db = DB::getConnection();
+        $sql = "SELECT *
+              FROM projet
+              WHERE id_promotion = (select id_promotion FROM membre_promotion WHERE id_personne = :idpersonne) ";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(":idpersonne", $idpersonne);
+        $ok = $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>
