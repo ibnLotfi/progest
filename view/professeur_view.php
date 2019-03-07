@@ -88,21 +88,21 @@
             <table>
              <thead>
 		<tr>
-			<th>Prénom</th>
-			<th>Nom</th>
-			<th>Promotion</th>
-                        <th>Ses projets</th>
+			<th>N°de l'équipe</th>
+			<th>Date de création</th>
+                        <th>Commentaire</th>
+                        
 		</tr>
             </thead>
             <?php 
-                foreach ($lesProjets as $unProjet)
+                foreach ($lesEquipes as $uneEquipe){
                     
                     ?>
                 <tr>
-                <td><?php echo "".$unProjet['titre']; ?></td>
-                <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
-                <td><?php echo "".$unProjet['date_limite']; ?></td>
-                <td><?php echo ''.$unProjet['sujet']; ?></td>
+                <td><?php echo "".$uneEquipe['id_equipe']; ?></td>
+                <td><?php echo "".$uneEquipe['date_creation_equipe']; ?></td>
+                <td><?php echo "".$unProjet['commentaire']; ?></td>
+               
                 
                 <td><input type="submit" name="modifier" value="Modifier le projet" />
                 </td>
@@ -111,7 +111,7 @@
 
 
                 <?php
-            }
+            }}
             ?>
             </table>
         </div>
