@@ -13,5 +13,6 @@ require_once("../model/personne_model.php");
 $lesProjetsPromotion =Promotion::getProjetPromotion($_SESSION["user"]["id_personne"]);
 //var_dump($lesProjetsPromotion);
 
+$PromotionConcernee = ' CDI78';
 include "../view/equipe_view.php";
 ?>

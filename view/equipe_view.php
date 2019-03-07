@@ -1,4 +1,4 @@
-<?php $PromotionConcernee = ' CDI8' ?>
+
 <form action="CreateEquipeTraitement.php" method="post">
     <table>
 
