@@ -11,3 +11,5 @@ RewriteBase /progest/pages/
 RewriteRule ^sign_in$ login.php
 RewriteRule ^sign_out$ login.php?action=disconnect
 #RewriteRule ^product-(\d+)$ product.php?id=$1
+
+#RewriteRule ^CreateEquip$ .php
