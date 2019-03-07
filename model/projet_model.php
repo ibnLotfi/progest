@@ -42,7 +42,7 @@ class Projet {
       $db = DB::getConnection();
       
       $sql = "insert into projet (id_proprietaire,titre,date_limite,sujet,id_promotion)
-              values(:idproprietaire,:titre,:date_limite,:sujet)";
+              values(:idproprietaire,:titre,:date_limite,:sujet,:idpromotion)";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idproprietaire", $idproprietaire);
       $stmt->bindValue(":titre", $titre);
