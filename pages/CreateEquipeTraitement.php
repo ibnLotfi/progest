@@ -11,16 +11,16 @@ require_once("../model/equipe_model.php");
  */
 $titre=$_POST["titre"];
 $CommentaireOptionnel=$_POST["CommentaireOptionnel"];
-$projets=$_POST["projetChoisie"];
-$idprojet=$_POST["idprojet"];
+$idprojet=$_POST["projetChoisie"];
+//$idprojet=$_POST["idprojet"];
 //Equipe::setEquipe($idprojet, $idproprietaire, $commentaire)
 
 //$ll = $_SESSION["user"]["idprojet"];
 
-echo $idprojet;
+//echo $idprojet;
 echo $titre;
 echo $CommentaireOptionnel;
-echo $projets;
+echo $idprojet;
 
 //foreach($projets as $projet) {
 //echo $projet.'<br/>';

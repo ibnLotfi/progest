@@ -11,18 +11,15 @@
                     <?php
                 foreach ($lesProjetsPromotion as $unProjet) {
                     ?>
-                <OPTION> <?php echo "" . $unProjet['titre']; ?> <?php echo "" . $unProjet['sujet']; ?>
-                
+           
+           <OPTION <?php echo 'value ="'.$unProjet['id_projet'].'"'?>> <?php echo "" . $unProjet['titre']; ?> <?php echo "" . $unProjet['sujet']; ?></option>
+           
                      <?php
     }
 ?>
         </SELECT>
             </p>
             
-            <?php
-            
-           echo' <input type ="hidden" name = "idprojet" value="'.$unProjet['titre'].'">';
-            ?>
 
         <p><input type="submit" value="OK"></p>
         

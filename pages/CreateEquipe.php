@@ -11,7 +11,7 @@ require_once("../model/personne_model.php");
 //var_dump($_SESSION["user"]["id_personne"]);
 
 $lesProjetsPromotion =Promotion::getProjetPromotion($_SESSION["user"]["id_personne"]);
-//var_dump($lesProjetsPromotion);
+var_dump($lesProjetsPromotion);
 
 include "../view/equipe_view.php";
 ?>
