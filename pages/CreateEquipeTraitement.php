@@ -12,6 +12,7 @@ require_once("../model/equipe_model.php");
 $titre=$_POST["titre"];
 $CommentaireOptionnel=$_POST["CommentaireOptionnel"];
 $idprojet=$_POST["projetChoisie"];
+$Var="test";
 //$idprojet=$_POST["idprojet"];
 //Equipe::setEquipe($idprojet, $idproprietaire, $commentaire)
 
