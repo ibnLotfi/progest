@@ -14,7 +14,7 @@ class Promotion {
         $db = DB::getConnection();
         $sql = "SELECT *
               FROM membre_promotion
-              WHERE idpersonne = :idpersonne ";
+              WHERE id_personne = :idpersonne ";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(":idpersonne", $idpersonne);
         $ok = $stmt->execute();
