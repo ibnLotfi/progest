@@ -16,7 +16,7 @@ $idprojet=$_POST["projetChoisie"];
 $idproprietaire =$_SESSION["user"]["id_personne"];
 
 
-//Equipe::setEquipe($idprojet, $idproprietaire, $commentaire);
+Equipe::setEquipe($idprojet, $idproprietaire, $commentaire);
 
 echo $idproprietaire."<br>";
 echo $commentaire."<br>";
