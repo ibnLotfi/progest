@@ -2,8 +2,8 @@
 <form action="CreateEquipeTraitement.php" method="post">
     <table>
 
-        <p>Titre :<input type="text" name="titre" />  </p>
-        <p>Commentaire optionnel : <input type="text" name="CommentaireOptionnel" /> </p>
+        
+        
         <p>Session de formation concernée :<?php echo $PromotionConcernee ?> </p>
         <p>Projet choisie : 
        
@@ -20,8 +20,8 @@
         </SELECT>
             </p>
             
-
-        <p><input type="submit" value="OK"></p>
+        <p>Commentaire optionnel : <input type="text" name="CommentaireOptionnel" /> </p>
+        <p><input type="submit" value="Création de l'équipe"></p>
         
 
     </table>

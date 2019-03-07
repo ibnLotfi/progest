@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 
 require_once("../model/equipe_model.php");
 
@@ -9,21 +10,17 @@ require_once("../model/equipe_model.php");
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$titre=$_POST["titre"];
-$CommentaireOptionnel=$_POST["CommentaireOptionnel"];
+//$titre=$_POST["titre"];
+$commentaire=$_POST["CommentaireOptionnel"];
 $idprojet=$_POST["projetChoisie"];
-//$idprojet=$_POST["idprojet"];
-//Equipe::setEquipe($idprojet, $idproprietaire, $commentaire)
+$idproprietaire =$_SESSION["user"]["id_personne"];
 
-//$ll = $_SESSION["user"]["idprojet"];
 
-//echo $idprojet;
-echo $titre;
-echo $CommentaireOptionnel;
-echo $idprojet;
+//Equipe::setEquipe($idprojet, $idproprietaire, $commentaire);
 
-//foreach($projets as $projet) {
-//echo $projet.'<br/>';
-//}
+echo $idproprietaire."<br>";
+echo $commentaire."<br>";
+echo $idprojet."<br>";
+
 
 
