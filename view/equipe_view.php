@@ -1,5 +1,7 @@
 <?php $PromotionConcernee=' CDI8'?>
 <form action="etudiant_controller.php" method="post">
+    
+    <br>
     <table>
         
          <p>Titre :<input type="text" name="titre" />  </p>
