@@ -50,7 +50,7 @@
                    
                     ?>
                 <tr>
-                <td><?php echo "".$unProjet['titre']; ?></td>
+                    <td><a href=""><?php  echo "".$unProjet['titre']; ?></a></td>
                 <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
                 <td><?php echo "".$unProjet['date_limite']; ?></td>
                 <td><?php echo ''.$unProjet['sujet']; ?></td>
