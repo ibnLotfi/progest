@@ -46,8 +46,8 @@
 		</tr>
             </thead>
             <?php 
-                foreach ($lesProjets as $unProjet)
-                    
+                foreach ($lesProjets as $unProjet){
+                   
                     ?>
                 <tr>
                 <td><?php echo "".$unProjet['titre']; ?></td>
@@ -62,7 +62,7 @@
 
 
                 <?php
-            }
+            }}
             ?>
             </table>
         </div>
