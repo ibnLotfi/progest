@@ -32,29 +32,35 @@ class Projet {
       $db = DB::getConnection();
       
       $sql = "SELECT *
-            FROM projet where id_projet = :idprojet )";
+            FROM projet where id_projet = :idprojet ";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idprojet", $idprojet);
       $ok = $stmt->execute();
       return $stmt->fetch(PDO::FETCH_ASSOC);
    }
-   public static function setProjet($idprojet) {
+   public static function setProjet($idprojet,$titre,$date_limite,$sujet) {
       $db = DB::getConnection();
       
-      $sql = "SELECT *
-            FROM projet where id_projet = :idprojet )";
+      $sql = "insert into projet (id_projet,titre,date_limite,sujet)
+              values(:idprojet,:titre,:date_limite,:sujet))";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idprojet", $idprojet);
+      $stmt->bindValue(":titre", $titre);
+      $stmt->bindValue(":date_limite", $date_limite);
+      $stmt->bindValue(":sujet", $sujet);
       $ok = $stmt->execute();
       return $ok;
    }
-   public static function upProjet($idprojet) {
+  public static function upProjet($idprojet,$titre,$date_limite,$sujet) {
       $db = DB::getConnection();
       
-      $sql = "SELECT *
-            FROM projet where id_projet = :idprojet )";
+      $sql = "UPDATE projet SET titre = :titre, date_limite = :date_limite, sujet = :sujet 
+          where id_projet = :ipdprojet ";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idprojet", $idprojet);
+      $stmt->bindValue(":titre", $titre);
+      $stmt->bindValue(":date_limite", $date_limite);
+      $stmt->bindValue(":sujet", $sujet);
       $ok = $stmt->execute();
       return $ok;
    }
