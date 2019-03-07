@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="static/auction.css"/>
-        <title>Projet collaboratif</title>
+        <title>Espace Formateur </title>
     </head>
     <body>
         <?php
@@ -14,18 +14,18 @@
         
         
         <!-- affichage d'es informations sur l'étudiant  -->
-        <p>Bienvenue <?php echo "".$_SESSION['user']['nom'] . " " . $_SESSION['user']['prenom']; ?></p>
+        <h2>Bienvenue <?php echo "".$_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom']; ?></h2>
         <div class ="info">
 <!--            <p> Nom : <?php echo $_SESSION['user']['nom']; ?> Prenom: <?php echo $_SESSION['user']['prenom']; ?> </p><br> -->
-            <p> Adresse: <?php echo $_SESSION['user']['adresse'] . ' ' . $_SESSION['user']['ville'] . ' ' . $_SESSION['user']['cp']; ?> </p><br>
-            <p> téléphone fixe : <?php echo $_SESSION['user']['tel']; ?></p>
-            <p> téléphone portable : <?php echo $_SESSION['user']['portable']; ?></p>
+            <p> <?php echo $_SESSION['user']['adresse'] . ' ' . $_SESSION['user']['ville'] . ' ' . $_SESSION['user']['cp']; ?> </p><br>
+            <p> Téléphone : <?php echo $_SESSION['user']['tel']." "."ou"." ".$_SESSION['user']['portable']; ?></p>
+            
             <br>
         </div>
         
         <!-- affichage des projets s'il y en a  -->
         <div class="projet">
-            <?php echo 'creer bouton créer projet'; ?>
+            
             
             <?php
             if (!isset($lesProjets) || empty($lesProjets)) {
@@ -33,7 +33,18 @@
             } else {
 
             ?>
+            <input type="submit" name="créer" value="Créer un projet" />
+             <br>
+             <br>
             <table>
+             <thead>
+		<tr>
+			<th>Titre du projet</th>
+			<th>Date de création</th>
+			<th>Date limite</th>
+                        <th>Sujet</th>
+		</tr>
+            </thead>
             <?php 
                 foreach ($lesProjets as $unProjet)
                     
@@ -41,10 +52,12 @@
                 <tr>
                 <td><?php echo "".$unProjet['titre']; ?></td>
                 <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
-                <td><?php echo "".$unProjet['dateLimite']; ?></td>
+                <td><?php echo "".$unProjet['date_limite']; ?></td>
                 <td><?php echo ''.$unProjet['sujet']; ?></td>
-                <td><?php echo 'creer bouton modifier'; ?></td>
-                 <td><?php echo 'creer bouton supprimer'; ?></td>
+                
+                <td><input type="submit" name="modifier" value="Modifier le projet" />
+                </td>
+                
                 </tr>
 
 
@@ -53,4 +66,3 @@
             ?>
             </table>
         </div>
-
