@@ -64,6 +64,19 @@ class Member {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+   public static function estMembreProjet($idpersonne) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+             FROM membre_promotion WHERE id_personne = :idpersonne ";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idpersonne", $idpersonne);
+      $ok = $stmt->execute();
+      if (empty($ok)) {
+      return false;
+   }
+      return true;
+      }
 }
 
 ?>
