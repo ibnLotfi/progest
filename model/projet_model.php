@@ -18,7 +18,46 @@ class Projet {
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
    
+   public static function getProprietaireProjet($idpersonne) {
+      $db = DB::getConnection();
+       $sql = "SELECT *
+            FROM projet where id_proprietaire = :idpersonne ";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idpersonne", $idpersonne);
+      $ok = $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   }
    
+   public static function getUnProjet($idprojet) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+            FROM projet where id_projet = :idprojet )";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idprojet", $idprojet);
+      $ok = $stmt->execute();
+      return $stmt->fetch(PDO::FETCH_ASSOC);
+   }
+   public static function setProjet($idprojet) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+            FROM projet where id_projet = :idprojet )";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idprojet", $idprojet);
+      $ok = $stmt->execute();
+      return $ok;
+   }
+   public static function upProjet($idprojet) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+            FROM projet where id_projet = :idprojet )";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idprojet", $idprojet);
+      $ok = $stmt->execute();
+      return $ok;
+   }
 }
 
 ?>
