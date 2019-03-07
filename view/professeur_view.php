@@ -66,3 +66,98 @@
             ?>
             </table>
         </div>
+        
+        <h3>Voici la liste des équipes</h3>
+        
+        
+        
+        <!-- affichage des équipes s'il y en a  -->
+
+    <div class="equipe">
+            
+            
+            <?php
+            if (!isset($lesEquipes) || empty($lesEquipes)) {
+                echo "<p>Il n'y a pas d'équipes</p>";
+            } else {
+
+            ?>
+            <input type="submit" name="voir" value="Voir elèves sans projet" />
+             <br>
+             <br>
+            <table>
+             <thead>
+		<tr>
+			<th>Prénom</th>
+			<th>Nom</th>
+			<th>Promotion</th>
+                        <th>Ses projets</th>
+		</tr>
+            </thead>
+            <?php 
+                foreach ($lesProjets as $unProjet)
+                    
+                    ?>
+                <tr>
+                <td><?php echo "".$unProjet['titre']; ?></td>
+                <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
+                <td><?php echo "".$unProjet['date_limite']; ?></td>
+                <td><?php echo ''.$unProjet['sujet']; ?></td>
+                
+                <td><input type="submit" name="modifier" value="Modifier le projet" />
+                </td>
+                
+                </tr>
+
+
+                <?php
+            }
+            ?>
+            </table>
+        </div>
+        <h3>Voici la liste des membres sans équipe</h3>
+        
+        <!-- affichage des membres sans équipe  -->
+
+    <div class="membre">
+            
+            
+            <?php
+            if (!isset($lesMembres) || empty($lesMembres)) {
+                echo "<p>Il n'y a pas de membres</p>";
+            } else {
+
+            ?>
+            <input type="submit" name="voir" value="Voir elèves sans projet" />
+             <br>
+             <br>
+            <table>
+             <thead>
+		<tr>
+			<th>Prénom</th>
+			<th>Nom</th>
+			<th>Promotion</th>
+                        <th>Ses projets</th>
+		</tr>
+            </thead>
+            <?php 
+                foreach ($lesProjets as $unProjet)
+                    
+                    ?>
+                <tr>
+                <td><?php echo "".$unProjet['titre']; ?></td>
+                <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
+                <td><?php echo "".$unProjet['date_limite']; ?></td>
+                <td><?php echo ''.$unProjet['sujet']; ?></td>
+                
+                <td><input type="submit" name="modifier" value="Modifier le projet" />
+                </td>
+                
+                </tr>
+
+
+                <?php
+            }
+            ?>
+            </table>
+        </div>
