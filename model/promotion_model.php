@@ -12,7 +12,7 @@ class Promotion {
      */
     public static function getPromotion($idpersonne) {
         $db = DB::getConnection();
-        $sql = "SELECT annee
+        $sql = "SELECT *
               FROM promotion
               WHERE id_promotion = (select id_promotion FROM membre_promotion WHERE id_personne = :idpersonne) ";
         $stmt = $db->prepare($sql);
