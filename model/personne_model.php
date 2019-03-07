@@ -51,11 +51,35 @@ class Member {
 
         $sql = "SELECT *
             FROM projet where id_proprietaire = :idpersonne ";
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(":idpersonne", $idpersonne);
-        $ok = $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idpersonne", $idpersonne);
+      $ok = $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   }
+   public static function getMembrePromo($idpersonne) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+            FROM personne where id_personne in (select id_personne from membre_promotion where id_promotion = (select id_promotion from membre_promotion where id_personne = :idpersonne)) ";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idpersonne", $idpersonne);
+      $ok = $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   }
+   public static function estMembreProjet($idpersonne) {
+      $db = DB::getConnection();
+      
+      $sql = "SELECT *
+             FROM membre_promotion WHERE id_personne = :idpersonne ";
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(":idpersonne", $idpersonne);
+      $ok = $stmt->execute();
+      if (empty($ok)) {
+      return false;
+   }
+      return true;
+      }
+       
     
     public static function getProjetjointure($idpersonne) {
         $db = DB::getConnection();
