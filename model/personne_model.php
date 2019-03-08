@@ -63,7 +63,7 @@ class Member {
         $db = DB::getConnection();
 
         //$sql = "SELECT * FROM projet where id_proprietaire = :idpersonne ";
-        $sql = "SELECT * FROM projet INNER JOIN membre_equipe ON membre_equipe.id_projet = projet.id_projet INNER JOIN equipe ON membre_equipe.id_projet = equipe.id_projet WHERE projet.id_proprietaire = :idpersonne ";
+        $sql = "SELECT distinct (e.id_equipe),e.*,p.* FROM projet p INNER JOIN membre_equipe m ON m.id_projet = p.id_projet INNER JOIN equipe e ON m.id_projet = e.id_projet WHERE p.id_proprietaire = :idpersonne ";
         
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idpersonne", $idpersonne);
