@@ -43,27 +43,64 @@
 			<th>Date de création</th>
 			<th>Date limite</th>
                         <th>Sujet</th>
+                        <th colspan="3">Equipes du projet</th>
 		</tr>
+                <tr>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>Equipe numero</td>
+                    <td>Date de création</td>
+                    <td>Commentaire</td>
+                </tr>
             </thead>
             <?php 
                 foreach ($lesProjets as $unProjet){
                    
                     ?>
+                 
                 <tr>
+                    <?php $id = $unProjet['id_projet']; ?>
                     <td><a href=""><?php  echo "".$unProjet['titre']; ?></a></td>
                 <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
                 <td><?php echo "".$unProjet['date_limite']; ?></td>
                 <td><?php echo ''.$unProjet['sujet']; ?></td>
-                
+                <td>     </td>
+                <td>     </td>
+                <td>     </td>
                 <td><input type="submit" name="modifier" value="Modifier le projet" />
-                </td>
+                </td> 
                 
-                </tr>
+                <tr>
+                <?php if(isset($unProjet['id_equipe']) ) {
+                       foreach ($lesProjets as $unProjet) {
+                        if($unProjet['id_projet']==$id) {
+                           ?>
+                    <tr>
+                        <td>     </td>
+                        <td>     </td>
+                        <td>     </td>
+                        <td>     </td>
+                        <td><?php echo "" . $unProjet['id_equipe']; ?></td>
+                        <td><?php echo "" . $unProjet['date_creation_equipe']; ?></td>
+                        <td><?php echo "" . $unProjet['commentaire'];  ?></td>
+                        <td>     </td>
+                    </tr>
+                     
+                    <?php
+                    //var_dump($id);
+                       }
+                       }
+                       }
+                    ?>
+                                
 
 
                 <?php
             }}
             ?>
+                
             </table>
         </div>
         
