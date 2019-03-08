@@ -44,6 +44,7 @@
 			<th align="center">Date limite</th>
                         <th align="center">Sujet</th>
                         <th align="center" colspan="3">Equipes du projet</th>
+                        <th align="center"></th>
 		</tr>
                 <tr>
                     <td>     </td>
@@ -52,7 +53,8 @@
                     <td>     </td>
                     <td>Equipe numero</td>
                     <td>Date de création</td>
-                    <td>Commentaire</td>
+                    <td align="center">Commentaire</td>
+                    <td>     </td>
                 </tr>
             </thead>
             <?php 
@@ -84,7 +86,7 @@
                         <td>     </td>
                         <td align="center"><?php echo "" . $unProjet['id_equipe']; ?></td>
                         <td align="center"><?php echo "" . $unProjet['date_creation_equipe']; ?></td>
-                        <td><?php echo "" . $unProjet['commentaire'];  ?></td>
+                        <td align="center"><?php echo "" . $unProjet['commentaire'];  ?></td>
                         <td>     </td>
                     </tr>
                      
@@ -104,54 +106,7 @@
             </table>
         </div>
         
-        <h3>Voici la liste des équipes</h3>
-        
-        
-        
-        <!-- affichage des équipes s'il y en a  -->
-
-    <div class="equipe">
-            
-            
-            <?php
-            if (!isset($lesEquipes) || empty($lesEquipes)) {
-                echo "<p>Il n'y a pas d'équipes</p>";
-            } else {
-
-            ?>
-            <input type="submit" name="voir" value="Voir elèves sans projet" />
-             <br>
-             <br>
-            <table>
-             <thead>
-		<tr>
-			<th>N°de l'équipe</th>
-			<th>Date de création</th>
-                        <th>Commentaire</th>
-                        
-		</tr>
-            </thead>
-            <?php 
-                foreach ($lesEquipes as $uneEquipe){
-                    
-                    ?>
-                <tr>
-                <td><?php echo "".$uneEquipe['id_equipe']; ?></td>
-                <td><?php echo "".$uneEquipe['date_creation_equipe']; ?></td>
-                <td><?php echo "".$unProjet['commentaire']; ?></td>
-               
-                
-                <td><input type="submit" name="modifier" value="Modifier le projet" />
-                </td>
-                
-                </tr>
-
-
-                <?php
-            }}
-            ?>
-            </table>
-        </div>
+     
         <h3>Voici la liste des membres sans équipe</h3>
         
         <!-- affichage des membres sans équipe  -->
@@ -160,41 +115,38 @@
             
             
             <?php
-            if (!isset($lesMembres) || empty($lesMembres)) {
+            if (!isset($lesPersonnes) || empty($lesPersonnes)) {
                 echo "<p>Il n'y a pas de membres</p>";
             } else {
 
             ?>
-            <input type="submit" name="voir" value="Voir elèves sans projet" />
-             <br>
-             <br>
+            
             <table>
              <thead>
 		<tr>
 			<th>Prénom</th>
 			<th>Nom</th>
 			<th>Promotion</th>
-                        <th>Ses projets</th>
+                        
 		</tr>
             </thead>
             <?php 
-                foreach ($lesProjets as $unProjet)
+                foreach ($lesPersonnes as $unePersonne){
                     
                     ?>
                 <tr>
-                <td><?php echo "".$unProjet['titre']; ?></td>
-                <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
-                <td><?php echo "".$unProjet['date_limite']; ?></td>
-                <td><?php echo ''.$unProjet['sujet']; ?></td>
+                <td><?php echo "".$unePersonne['prenom']; ?></td>
+                <td><?php echo "".$unePersonne['nom']; ?></td>
+               <td><?php echo "".$unePersonne['annee']; ?></td>
                 
-                <td><input type="submit" name="modifier" value="Modifier le projet" />
-                </td>
+                
+                
                 
                 </tr>
 
 
                 <?php
-            }
+            }}
             ?>
             </table>
         </div>
