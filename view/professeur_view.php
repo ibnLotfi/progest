@@ -14,7 +14,7 @@
         
         
         <!-- affichage d'es informations sur l'étudiant  -->
-        <h2>Bienvenue <?php echo "".$_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom']; ?></h2>
+        <h2 align="center">Bienvenue <?php echo "".$_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom']; ?></h2>
         <div class ="info">
 <!--            <p> Nom : <?php echo $_SESSION['user']['nom']; ?> Prenom: <?php echo $_SESSION['user']['prenom']; ?> </p><br> -->
             <p> <?php echo $_SESSION['user']['adresse'] . ' ' . $_SESSION['user']['ville'] . ' ' . $_SESSION['user']['cp']; ?> </p><br>
@@ -33,7 +33,7 @@
             } else {
 
             ?>
-             <a href="../pages/projet_controller.php">Créer un projet</a>
+            <a href="../pages/projet_controller.php"><span style="border:1px solid black;"><b>Créer un projet</b></span></a>
              <br>
              <br>
             <table>
