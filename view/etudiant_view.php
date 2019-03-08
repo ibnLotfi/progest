@@ -41,18 +41,18 @@
                     // $unProjet['id_projet'];
                     ?>
                     <tr>
-                        <td><?php echo "" . $unProjet['titre']; ?></td>
-                        <td><?php echo "" . $unProjet['date_creation_projet']; ?></td>
-                        <td><?php echo "" . $unProjet['date_limite'];  ?></td>
-                        <td><?php echo '' . $unProjet['sujet']; ?></td>
+                        <td><?php echo "Titre : " . $unProjet['titre']; ?></td>
+                        <td><?php echo "Date de création : " . $unProjet['date_creation_projet']; ?></td>
+                        <td><?php echo "Date de fin : " . $unProjet['date_limite'];  ?></td>
+                        <td><?php echo "Sujet : ". $unProjet['sujet']; ?></td>
                     </tr>
                     <!--  Ici nous avons une boucle afin d'ajouter les equipes uniquement si elles existent    -->
-                   <?php if(isset($unProjet['id_equipe'])) { 
+                   <?php if(isset($unProjet['id_equipe']) ) {
                        foreach ($lesProjets as $unProjet) {
                        ?>
                     <tr>
                         <td>     </td>
-                        <td><?php echo "equipe numero : " . $unProjet['id_equipe']; ?></td>
+                        <td><?php echo "Equipe numero : " . $unProjet['id_equipe']; ?></td>
                         <td><?php echo "" . $unProjet['date_creation_equipe']; ?></td>
                         <td><?php echo "" . $unProjet['commentaire'];  ?></td>
                     </tr>
