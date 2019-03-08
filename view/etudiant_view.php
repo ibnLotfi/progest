@@ -36,19 +36,25 @@
             ?>
             <table>
                 <?php
+                
+                
                 foreach ($lesProjets as $unProjet) {
+                    
                     //$idProj = $unProjet['id_projet'];
                     // $unProjet['id_projet'];
                     ?>
                     <tr>
+                    <?php $id = $unProjet['id_projet']; ?> 
                         <td><?php echo "Titre : " . $unProjet['titre']; ?></td>
                         <td><?php echo "Date de création : " . $unProjet['date_creation_projet']; ?></td>
                         <td><?php echo "Date de fin : " . $unProjet['date_limite'];  ?></td>
                         <td><?php echo "Sujet : ". $unProjet['sujet']; ?></td>
                     </tr>
                     <!--  Ici nous avons une boucle afin d'ajouter les equipes uniquement si elles existent    -->
-                   <?php if(isset($unProjet['id_equipe']) ) {
-                       foreach ($lesProjets as $unProjet) {
+                   <?php if(isset($unProjet['id_equipe'])) {
+                       foreach ($lesProjets as $unProjet) { 
+                           if($unProjet['id_projet']==$id) {
+                           
                        ?>
                     <tr>
                         <td>     </td>
@@ -57,6 +63,7 @@
                         <td><?php echo "" . $unProjet['commentaire'];  ?></td>
                     </tr>
                     <?php 
+                           }
                        }
                        }
                     ?>
