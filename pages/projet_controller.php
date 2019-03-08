@@ -15,7 +15,7 @@ and open the template in the editor.
         if (isset($_GET["action"]) && $_GET["action"] = "submit") {
             require_once '../model/projet_model.php';
             Projet::setProjet($_POST["titre"], $_POST["dateLimite"], $_POST["sujet"], $_SESSION['user']['id_personne'],$_POST['promotion']);
-            header("location: professeur_controller.php");
+            header("location: index.php");
         } else {
             require_once '../model/promotion_model.php';
             $lesPromotions = Promotion::getPromotion($_SESSION['user']['id_personne']);
