@@ -89,6 +89,17 @@ class Member {
         $ok = $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    /**
+     * Membre sans equipe
+     */
+    public static function getMemberSansEquipe() {
+        $db = DB::getConnection();
+        $sql1 = "SELECT * FROM personne WHERE ID_personne NOT IN (select id_personne FROM membre_equipe) ";
+        $stmt = $db->prepare($sql1);
+        $stmt->bindValue(":idpersonne", $idpersonne);
+        $ok = $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 
