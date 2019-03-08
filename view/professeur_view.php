@@ -59,7 +59,9 @@
                 foreach ($lesProjets as $unProjet){
                    
                     ?>
+                 
                 <tr>
+                    <?php $id = $unProjet['id_projet']; ?>
                     <td><a href=""><?php  echo "".$unProjet['titre']; ?></a></td>
                 <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
                 <td><?php echo "".$unProjet['date_limite']; ?></td>
@@ -69,17 +71,26 @@
                 <td>     </td>
                 <td><input type="submit" name="modifier" value="Modifier le projet" />
                 </td> 
+                
                 <tr>
                 <?php if(isset($unProjet['id_equipe']) ) {
                        foreach ($lesProjets as $unProjet) {
-                       ?>
+                        if($unProjet['id_projet']==$id) {
+                           ?>
                     <tr>
+                        <td>     </td>
+                        <td>     </td>
+                        <td>     </td>
                         <td>     </td>
                         <td><?php echo "" . $unProjet['id_equipe']; ?></td>
                         <td><?php echo "" . $unProjet['date_creation_equipe']; ?></td>
                         <td><?php echo "" . $unProjet['commentaire'];  ?></td>
+                        <td>     </td>
                     </tr>
-                    <?php 
+                     
+                    <?php
+                    //var_dump($id);
+                       }
                        }
                        }
                     ?>
