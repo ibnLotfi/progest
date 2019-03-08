@@ -33,7 +33,7 @@
             } else {
 
             ?>
-            <button> <a href="projet_controller.php">Créer un projet</a></button>
+            <button> <a href="../pages/projet_controller.php">Créer un projet</a></button>
              <br>
              <br>
             <table>
