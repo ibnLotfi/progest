@@ -20,6 +20,11 @@ class Promotion {
         $ok = $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    /**
+     * Liste des projet de la promotion
+     * @param type $idpersonne
+     * @return type liste
+     */
     public static function getProjetPromotion($idpersonne) {
         $db = DB::getConnection();
         $sql = "SELECT *
