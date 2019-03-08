@@ -125,6 +125,9 @@
                     //foreach ($lesProjets as $unProjet) {
                     */?>
                 <tr>
+                    <td colspan="4">------------------------------------------------------------------------------------------------------------------------------------------</td>
+                </tr>
+                <tr>                   
                     <td colspan="4" align="center"><?php echo "Promotion numéro : " . $unProjet['id_promotion']; $idpromo = $unProjet['id_promotion'];?></td>
                 </tr>
                     <?php 
