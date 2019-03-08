@@ -10,7 +10,7 @@
         require_once("header.php");
         ?>
         <!-- affichage d'un message perosnnalisé  -->
-        <h1>Espace Formateur  </h1>
+        <h1 align="center">Espace Formateur  </h1>
         
         
         <!-- affichage d'es informations sur l'étudiant  -->
@@ -39,11 +39,11 @@
             <table>
              <thead>
 		<tr>
-			<th>Titre du projet</th>
-			<th>Date de création</th>
-			<th>Date limite</th>
-                        <th>Sujet</th>
-                        <th colspan="3">Equipes du projet</th>
+			<th align="center">Titre du projet</th>
+			<th align="center">Date de création</th>
+			<th align="center">Date limite</th>
+                        <th align="center">Sujet</th>
+                        <th align="center" colspan="3">Equipes du projet</th>
 		</tr>
                 <tr>
                     <td>     </td>
@@ -62,10 +62,10 @@
                  
                 <tr>
                     <?php $id = $unProjet['id_projet']; ?>
-                    <td><a href=""><?php  echo "".$unProjet['titre']; ?></a></td>
-                <td><?php echo "".$unProjet['date_creation_projet']; ?></td>
-                <td><?php echo "".$unProjet['date_limite']; ?></td>
-                <td><?php echo ''.$unProjet['sujet']; ?></td>
+                    <td align="center"><a href=""><?php  echo "".$unProjet['titre']; ?></a></td>
+                <td align="center"><?php echo "".$unProjet['date_creation_projet']; ?></td>
+                <td align="center"><?php echo "".$unProjet['date_limite']; ?></td>
+                <td align="center"><?php echo ''.$unProjet['sujet']; ?></td>
                 <td>     </td>
                 <td>     </td>
                 <td>     </td>
@@ -82,8 +82,8 @@
                         <td>     </td>
                         <td>     </td>
                         <td>     </td>
-                        <td><?php echo "" . $unProjet['id_equipe']; ?></td>
-                        <td><?php echo "" . $unProjet['date_creation_equipe']; ?></td>
+                        <td align="center"><?php echo "" . $unProjet['id_equipe']; ?></td>
+                        <td align="center"><?php echo "" . $unProjet['date_creation_equipe']; ?></td>
                         <td><?php echo "" . $unProjet['commentaire'];  ?></td>
                         <td>     </td>
                     </tr>
