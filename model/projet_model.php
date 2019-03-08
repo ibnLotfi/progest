@@ -82,7 +82,7 @@ class Projet {
       $db = DB::getConnection();
       
       $sql = "UPDATE projet SET titre = :titre, date_limite = :date_limite, sujet = :sujet 
-          where id_projet = :ipdprojet ";
+          where id_projet = :idprojet ";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idprojet", $idprojet);
       $stmt->bindValue(":titre", $titre);
