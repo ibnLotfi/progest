@@ -20,6 +20,11 @@ class Equipe {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+   /**
+    * Liste des équipe sur un projet.
+    * @param type $idprojet
+    * @return type
+    */
     public static function getEquipeProjet($idprojet) {
       $db = DB::getConnection();
       $sql = "SELECT *
@@ -30,10 +35,17 @@ class Equipe {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+   /**
+    * Création d'une équipe
+    * @param type $idprojet
+    * @param type $idproprietaire
+    * @param type $commentaire
+    * @return type
+    */
     public static function setEquipe($idprojet,$idproprietaire,$commentaire) { //,$date_Creation_Equipe
       $db = DB::getConnection();
       $sql = "insert into equipe (id_projet,id_proprietaire,date_Creation_Equipe,commentaire) 
-          values (:idprojet,:idproprietaire,'2019-03-07',:commenataire";
+          values (:idprojet,:idproprietaire,'2019-03-07',:commentaire)";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idprojet", $idprojet);
       $stmt->bindValue(":idproprietaire", $idproprietaire);

@@ -17,7 +17,11 @@ class Projet {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
-   
+   /**
+    * Liste des projet d'un propriétaire.
+    * @param type $idpersonne
+    * @return type liste
+    */
    public static function getProprietaireProjet($idpersonne) {
       $db = DB::getConnection();
        $sql = "SELECT *
@@ -27,7 +31,11 @@ class Projet {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
-   
+   /**
+    * Récuperer un projet
+    * @param type $idprojet
+    * @return type une ligne
+    */
    public static function getUnProjet($idprojet) {
       $db = DB::getConnection();
       
@@ -38,11 +46,20 @@ class Projet {
       $ok = $stmt->execute();
       return $stmt->fetch(PDO::FETCH_ASSOC);
    }
+   /**
+    * Création d'un projet
+    * @param type $titre
+    * @param type $date_limite
+    * @param type $sujet
+    * @param type $idproprietaire
+    * @param type $idpromotion
+    * @return type
+    */
    public static function setProjet($titre,$date_limite,$sujet,$idproprietaire, $idpromotion) {
       $db = DB::getConnection();
       
       $sql = "insert into projet (id_proprietaire,titre,date_limite,sujet,id_promotion)
-              values(:idproprietaire,:titre,:date_limite,:sujet)";
+              values(:idproprietaire,:titre,:date_limite,:sujet,:idpromotion)";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idproprietaire", $idproprietaire);
       $stmt->bindValue(":titre", $titre);
@@ -52,6 +69,14 @@ class Projet {
       $ok = $stmt->execute();
       return $ok;
    }
+   /**
+    * Mise a jour d'information d'un projet.
+    * @param type $idprojet
+    * @param type $titre
+    * @param type $date_limite
+    * @param type $sujet
+    * @return type
+    */
   public static function updateProjet($idprojet,$titre,$date_limite,$sujet) {
       $db = DB::getConnection();
       
