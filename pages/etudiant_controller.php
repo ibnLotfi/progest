@@ -17,7 +17,7 @@ $lesProjets= Member::getProjetjointure($_SESSION["user"]["id_personne"]);
 
 
 //var_dump($lesProjets);
-include "../view/etudiant_view.php";
+include "../view/etudiant_view2.php";
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
