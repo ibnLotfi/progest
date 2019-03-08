@@ -6,9 +6,10 @@
 /**
  * Author:  Stéphane
  * Created: 8 mars 2019
+ * update: 20190308 by CCU
  */
 
 --installe le trigger lié à la fonction insert_projet
-create or replace trigger insert_projet_trigger 
+create TRIGGER insert_projet_trigger 
 before insert on projet for each row
-execute insert_projet();
+execute procedure insert_projet();
