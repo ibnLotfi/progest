@@ -1,10 +1,10 @@
-<?php $PromotionConcernee = ' CDI8' ?>
+
 <form action="CreateEquipeTraitement.php" method="post">
     <table>
 
         
         
-        <p>Session de formation concernée :<?php echo $PromotionConcernee ?> </p>
+<!--        <p>Session de formation concernée :<?php //echo $PromotionConcernee ?> </p>-->
         <p>Projet choisie : 
        
        <SELECT name="projetChoisie" size="1">
