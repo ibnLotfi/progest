@@ -20,7 +20,12 @@ class Member {
         $ok = $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
+    /**
+     * Validation du compte et mot de passe
+     * @param type $login
+     * @param type $password
+     * @return type
+     */
     public static function getByLoginPassword($login, $password) {
         $db = DB::getConnection();
         // We should use an encoded password, like PASSWORD(password)
@@ -34,7 +39,11 @@ class Member {
         $ok = $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
+    /**
+     * Liste des projet d'une promotion
+     * @param type $idpersonne
+     * @return type
+     */
     public static function getProjet($idpersonne) {
         $db = DB::getConnection();
         $sql = "SELECT *
@@ -45,7 +54,11 @@ class Member {
         $ok = $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    /**
+     * Liste des projet d'un propriétaire.
+     * @param type $idpersonne
+     * @return type
+     */
     public static function getProjetProf($idpersonne) {
         $db = DB::getConnection();
 
@@ -56,6 +69,11 @@ class Member {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+   /**
+    * Liste des membre de la promotion d'un membre.
+    * @param type $idpersonne
+    * @return type liste
+    */
    public static function getMembrePromo($idpersonne) {
       $db = DB::getConnection();
       
@@ -66,6 +84,11 @@ class Member {
       $ok = $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+   /**
+    * Liste des projet d'une personne
+    * @param type $idpersonne
+    * @return boolean liste
+    */
    public static function estMembreProjet($idpersonne) {
       $db = DB::getConnection();
       
@@ -79,7 +102,11 @@ class Member {
    }
       return true;
       }
-       
+     /**
+      * Liste des projet avec les equipes d'une personne
+      * @param type $idpersonne
+      * @return type Liste
+      */  
     
     public static function getProjetjointure($idpersonne) {
         $db = DB::getConnection();
@@ -91,6 +118,7 @@ class Member {
     }
     /**
      * Membre sans equipe
+     * @return type Liste
      */
     public static function getMemberSansEquipe() {
         $db = DB::getConnection();
