@@ -10,4 +10,10 @@ require_once("../model/personne_model.php");
 
 $lesProjets= Member::getProjetProf($_SESSION["user"]["id_personne"]);
 //var_dump($lesProjets);
+
+
+
+
+$lesPersonnes= Member::getMemberSansEquipe();
+//var_dump($lesProjets);
 include "../view/professeur_view.php";

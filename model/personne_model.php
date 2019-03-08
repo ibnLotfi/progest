@@ -123,9 +123,9 @@ class Member {
      */
     public static function getMemberSansEquipe() {
         $db = DB::getConnection();
-        $sql1 = "SELECT * FROM personne WHERE ID_personne NOT IN (select id_personne FROM membre_equipe) ";
+        $sql1 = "SELECT nom,prenom,annee FROM personne  natural join membre_promotion natural join promotion WHERE id_personne NOT IN (select id_personne FROM membre_equipe) and etre_prof=false";
         $stmt = $db->prepare($sql1);
-        $stmt->bindValue(":idpersonne", $idpersonne);
+        
         $ok = $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
