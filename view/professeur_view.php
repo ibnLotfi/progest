@@ -33,7 +33,7 @@
             } else {
 
             ?>
-            <input type="submit" name="créer" value="Créer un projet" />
+            <button> <a href="projet_controller.php">Créer un projet</a></button>
              <br>
              <br>
             <table>
