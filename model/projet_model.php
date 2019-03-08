@@ -58,11 +58,12 @@ class Projet {
    public static function setProjet($titre,$date_limite,$sujet,$idproprietaire, $idpromotion) {
       $db = DB::getConnection();
       
-      $sql = "insert into projet (id_proprietaire,titre,date_limite,sujet,id_promotion)
-              values(:idproprietaire,:titre,:date_limite,:sujet,:idpromotion)";
+      $sql = "insert into projet (id_proprietaire,titre,date_creation_projet,date_limite,sujet,id_promotion)
+              values(:idproprietaire,:titre,:date_creation_projet,:date_limite,:sujet,:idpromotion)";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(":idproprietaire", $idproprietaire);
       $stmt->bindValue(":titre", $titre);
+      $stmt->bindValue(":date_creation_projet", date("Y-m-d"));
       $stmt->bindValue(":date_limite", $date_limite);
       $stmt->bindValue(":sujet", $sujet);
       $stmt->bindValue(":idpromotion", $idpromotion);
